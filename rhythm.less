@@ -3,10 +3,9 @@
 @margin-before : null, 
 @margin-after : null) 
 when (@font-scale > 0) {
-	@new-font-size: round(@body-font-size * (@scale-factor * @font-scale));
-
+	@new-font-size: round(@body-font-size * pow(@scale-factor, @font-scale));
 	font-size: @new-font-size;
-	line-height: ceil((@new-font-size / (@body-line-height * @body-font-size))) * (@body-line-height * @body-font-size)!important;
+	line-height: ceil((@new-font-size / (@body-line-height * @body-font-size))) * (@body-line-height * @body-font-size);
 	
 	margin-top: @body-font-size * (@body-line-height * @margin-before);
 	margin-bottom: @body-font-size * (@body-line-height * @margin-after);
@@ -18,35 +17,32 @@ when (@font-scale > 0) {
 @margin-after : null) 
 when (@font-scale = 0) {
 	font-size: @body-font-size;
-	line-height: @body-font-size * @body-line-height!important;
+	line-height: @body-font-size * @body-line-height;
 	
 	margin-top: @body-font-size * (@body-line-height * @margin-before);
 	margin-bottom: @body-font-size * (@body-line-height * @margin-after);
 }
 
 .rhythm-height(@font-scale) {
-	@new-font-size: round(@body-font-size * (@scale-factor * @font-scale));
+	@new-font-size: round(@body-font-size * pow(@scale-factor, @font-scale));
 	@new-line-heigth: ceil((@new-font-size / (@body-line-height * @body-font-size))) * (@body-line-height * @body-font-size);
 
 	height: @new-line-heigth;
 }
 
 .rhythm-height(@font-scale) when (@font-scale > 0) {
-	@new-font-size: round(@body-font-size * (@scale-factor * @font-scale));
+	@new-font-size: round(@body-font-size * pow(@scale-factor, @font-scale));
 	@new-line-heigth: ceil((@new-font-size / (@body-line-height * @body-font-size))) * (@body-line-height * @body-font-size);
 
 	height: @new-line-heigth;
 }
 
 .rhythm-square(@font-scale) when (@font-scale > 0) {
-	@new-font-size: round(@body-font-size * (@scale-factor * @font-scale));
+	@new-font-size: round(@body-font-size * pow(@scale-factor, @font-scale));
 	@new-line-heigth: ceil((@new-font-size / (@body-line-height * @body-font-size))) * (@body-line-height * @body-font-size);
 
 	font-size: @new-font-size;
-	line-height: @new-line-heigth!important;
-
-	text-align: center;
-	display: inline-block;
+	line-height: @new-line-heigth;
 
 	height: @new-line-heigth;
 	width: @new-line-heigth;
@@ -55,9 +51,6 @@ when (@font-scale = 0) {
 .rhythm-square(@font-scale) when (@font-scale = 0) {
 	font-size: @body-font-size;
 	line-height: @body-font-size * @body-line-height;
-
-	text-align: center;
-	display: inline-block;
 
 	height:@body-font-size * @body-line-height;
 	width:@body-font-size * @body-line-height;
