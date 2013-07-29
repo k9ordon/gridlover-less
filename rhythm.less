@@ -1,0 +1,81 @@
+.rhythm(
+@font-scale, 
+@margin-before : null, 
+@margin-after : null) 
+when (@font-scale > 0) {
+	@new-font-size: round(@body-font-size * (@scale-factor * @font-scale));
+
+	font-size: @new-font-size;
+	line-height: ceil((@new-font-size / (@body-line-height * @body-font-size))) * (@body-line-height * @body-font-size)!important;
+	
+	margin-top: @body-font-size * (@body-line-height * @margin-before);
+	margin-bottom: @body-font-size * (@body-line-height * @margin-after);
+}
+
+.rhythm(
+@font-scale, 
+@margin-before : null, 
+@margin-after : null) 
+when (@font-scale = 0) {
+	font-size: @body-font-size;
+	line-height: @body-font-size * @body-line-height!important;
+	
+	margin-top: @body-font-size * (@body-line-height * @margin-before);
+	margin-bottom: @body-font-size * (@body-line-height * @margin-after);
+}
+
+.rhythm-height(@font-scale) {
+	@new-font-size: round(@body-font-size * (@scale-factor * @font-scale));
+	@new-line-heigth: ceil((@new-font-size / (@body-line-height * @body-font-size))) * (@body-line-height * @body-font-size);
+
+	height: @new-line-heigth;
+}
+
+.rhythm-height(@font-scale) when (@font-scale > 0) {
+	@new-font-size: round(@body-font-size * (@scale-factor * @font-scale));
+	@new-line-heigth: ceil((@new-font-size / (@body-line-height * @body-font-size))) * (@body-line-height * @body-font-size);
+
+	height: @new-line-heigth;
+}
+
+.rhythm-square(@font-scale) when (@font-scale > 0) {
+	@new-font-size: round(@body-font-size * (@scale-factor * @font-scale));
+	@new-line-heigth: ceil((@new-font-size / (@body-line-height * @body-font-size))) * (@body-line-height * @body-font-size);
+
+	font-size: @new-font-size;
+	line-height: @new-line-heigth!important;
+
+	text-align: center;
+	display: inline-block;
+
+	height: @new-line-heigth;
+	width: @new-line-heigth;
+}
+
+.rhythm-square(@font-scale) when (@font-scale = 0) {
+	font-size: @body-font-size;
+	line-height: @body-font-size * @body-line-height;
+
+	text-align: center;
+	display: inline-block;
+
+	height:@body-font-size * @body-line-height;
+	width:@body-font-size * @body-line-height;
+}
+
+.rhythm-padding(
+@font-scale, 
+@padding-before : null, 
+@padding-after : null) {
+	padding-top: @body-font-size * (@body-line-height * @padding-before);
+	padding-bottom: @body-font-size * (@body-line-height * @padding-after);
+}
+
+.vgrid(@color: rgba(0,0,0,.12)) {
+	background-image:-webkit-gradient(
+		linear, 100% 0%, 100% 100%, 
+		from(@color), to(transparent), color-stop(0.1, transparent));
+	-webkit-background-size: 100% (@body-font-size * @body-line-height);
+	background-repeat: repeat;
+	background-position: top left;
+}
