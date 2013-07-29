@@ -1,0 +1,28 @@
+// rhythm
+@body-font-size : 16px;
+@body-line-height : 1.5;
+@scale-factor : 1.680;
+
+@import 'config';
+@import '../rhythm';
+
+body {
+	.vgrid(gray);
+	.rhythm(0, 0, 0);  
+} 
+
+p, ul, ol {
+	.rhythm(0, 0, 1);
+}
+
+h1 {
+	.rhythm(4, 1, 2);
+} 
+
+h2 {
+	.rhythm(2, 2, 1);
+}
+
+h3 {
+	.rhythm(1, 1, 0);
+}

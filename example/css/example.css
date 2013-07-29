@@ -1,0 +1,36 @@
+body {
+  background-image: -webkit-gradient(linear, 100% 0%, 100% 100%, from(#808080), to(transparent), color-stop(0.1, transparent));
+  -webkit-background-size: 100% 21px;
+  background-repeat: repeat;
+  background-position: top left;
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+p,
+ul,
+ol {
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 0px;
+  margin-bottom: 21px;
+}
+h1 {
+  font-size: 44px;
+  line-height: 63px;
+  margin-top: 21px;
+  margin-bottom: 42px;
+}
+h2 {
+  font-size: 25px;
+  line-height: 42px;
+  margin-top: 42px;
+  margin-bottom: 21px;
+}
+h3 {
+  font-size: 19px;
+  line-height: 21px;
+  margin-top: 21px;
+  margin-bottom: 0px;
+}
